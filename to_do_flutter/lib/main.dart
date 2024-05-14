@@ -27,15 +27,17 @@ class MyApp extends StatelessWidget {
                   IconButton(onPressed: () {}, icon: Icon(Icons.search)),
                   IconButton(onPressed: () {}, icon: Icon(Icons.logout)),
                 ]),
-            body: GridView.builder(
-                itemCount: 64,
-                gridDelegate:
-                    // Grid delegate controls how many items are displayed in a row
-                    SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4),
-                itemBuilder: (context, index) => Container(
-                      color: Colors.deepPurple,
-                      margin: EdgeInsets.all(2),
-                    ))));
+            body: GestureDetector(
+                onTap: () {
+                  print("Tapped");
+                },
+                child: Stack(alignment: Alignment.topCenter, children: [
+                  Container(
+                      height: 300, width: 300, color: Colors.deepPurple[800]),
+                  Container(
+                      height: 200, width: 200, color: Colors.deepOrange[400]),
+                  Container(
+                      height: 100, width: 100, color: Colors.deepOrange[200])
+                ]))));
   }
 }
